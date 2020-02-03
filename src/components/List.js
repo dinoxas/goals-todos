@@ -12,7 +12,10 @@ export default function List(props) {
           >
             {item.name}
           </span>
-          <button onClick={() => props.remove(item)}>X</button>
+          <button
+            className="delete is-medium"
+            onClick={() => props.remove(item)}
+          ></button>
         </li>
       ))}
     </ul>

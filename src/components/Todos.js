@@ -7,6 +7,8 @@ import {
   handleToggle
 } from "../actions/todos";
 
+import { FaPlusSquare } from "react-icons/fa";
+
 class Todos extends React.Component {
   addItem = e => {
     e.preventDefault();
@@ -23,14 +25,26 @@ class Todos extends React.Component {
   };
   render() {
     return (
-      <div>
-        <h1>Todo List</h1>
-        <input
-          type="text"
-          placeholder="Add Todo"
-          ref={input => (this.input = input)}
-        />
-        <button onClick={this.addItem}>Add Todo</button>
+      <div className="content">
+        <h2 className="title is-3">Todos</h2>
+        <div className="field has-addons">
+          <div className="control">
+            <input
+              className="input"
+              type="text"
+              placeholder="Add Todo"
+              ref={input => (this.input = input)}
+            />
+          </div>
+          <div className="control">
+            <button className="button" onClick={this.addItem}>
+              <span>Add Todo</span>
+              <span className="icon">
+                <FaPlusSquare color="" />
+              </span>
+            </button>
+          </div>
+        </div>
 
         <List
           toggle={this.toggleItem}

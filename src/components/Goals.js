@@ -2,6 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import List from "./List";
 import { handleAddGoal, handleDeleteGoal } from "../actions/goals";
+import { FaPlusSquare } from "react-icons/fa";
 
 class Goals extends React.Component {
   addItem = e => {
@@ -16,15 +17,27 @@ class Goals extends React.Component {
   };
   render() {
     return (
-      <div>
-        <h1>Goals</h1>
-        <input
-          type="text"
-          placeholder="Add Goal"
-          ref={input => (this.input = input)}
-        />
-        <button onClick={this.addItem}>Add Goal</button>
+      <div className="content">
+        <h2 className="title is-3">Goals</h2>
 
+        <div className="field has-addons">
+          <div className="control">
+            <input
+              className="input"
+              type="text"
+              placeholder="Add Goal"
+              ref={input => (this.input = input)}
+            />
+          </div>
+          <div className="control">
+            <button className="button" onClick={this.addItem}>
+              <span>Add Goal</span>
+              <span className="icon">
+                <FaPlusSquare color="" />
+              </span>
+            </button>
+          </div>
+        </div>
         <List items={this.props.goals} remove={this.removeItem} />
       </div>
     );
