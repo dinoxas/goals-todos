@@ -1,5 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
+import LoadingBar from "react-redux-loading";
 import ConnectedTodos from "./Todos";
 import ConnectedGoals from "./Goals";
 import { handleInitialData } from "../actions/shared";
@@ -10,14 +11,9 @@ class App extends React.Component {
     dispatch(handleInitialData());
   }
   render() {
-    const { loading } = this.props;
-
-    if (loading === true) {
-      return <h3>Loading</h3>;
-    }
-
     return (
       <div>
+        <LoadingBar />
         <div className="hero is-primary">
           <div className="hero-body">
             <h1 className="title is-3 has-text-centered">

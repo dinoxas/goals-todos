@@ -1,10 +1,10 @@
 import { combineReducers } from "redux";
+import { loadingBarReducer } from "react-redux-loading";
 import todos from "./todos";
 import goals from "./goals";
-import loading from "./loading";
 
 export default combineReducers({
   todos,
   goals,
-  loading
+  loadingBar: loadingBarReducer
 });
