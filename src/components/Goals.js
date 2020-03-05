@@ -17,25 +17,26 @@ class Goals extends React.Component {
   };
   render() {
     return (
-      <div className="content">
-        <h2 className="title is-3">Goals</h2>
-
-        <div className="field has-addons">
-          <div className="control">
-            <input
-              className="input"
-              type="text"
-              placeholder="Add Goal"
-              ref={input => (this.input = input)}
-            />
-          </div>
-          <div className="control">
-            <button className="button" onClick={this.addItem}>
-              <span>Add Goal</span>
-              <span className="icon">
-                <FaPlusSquare color="" />
-              </span>
-            </button>
+      <div className="panel is-success">
+        <p className="panel-heading">Goals</p>
+        <div style={{ borderBottom: "1px solid #ededed", padding: "10px" }}>
+          <div className="field has-addons">
+            <div className="control is-expanded">
+              <input
+                className="input"
+                type="text"
+                placeholder="Add a goal..."
+                ref={input => (this.input = input)}
+              />
+            </div>
+            <div className="control">
+              <button className="button is-success" onClick={this.addItem}>
+                <span>Add Goal</span>
+                <span className="icon">
+                  <FaPlusSquare color="" />
+                </span>
+              </button>
+            </div>
           </div>
         </div>
         <List items={this.props.goals} remove={this.removeItem} />

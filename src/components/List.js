@@ -1,9 +1,9 @@
 import React from "react";
 export default function List(props) {
   return (
-    <ol>
+    <div className="">
       {props.items.map(item => (
-        <li key={item.id}>
+        <div className="panel-block" key={item.id}>
           <span
             onClick={() => props.toggle && props.toggle(item.id)}
             style={{
@@ -16,11 +16,11 @@ export default function List(props) {
             {item.name}
           </span>
           <button
-            className="delete is-medium"
+            className="delete is-small"
             onClick={() => props.remove(item)}
           ></button>
-        </li>
+        </div>
       ))}
-    </ol>
+    </div>
   );
 }
