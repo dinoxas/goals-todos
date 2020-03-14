@@ -31,9 +31,8 @@ class Goals extends React.Component {
             </div>
             <div className="control">
               <button className="button is-success" onClick={this.addItem}>
-                <span>Add Goal</span>
                 <span className="icon">
-                  <FaPlusSquare color="" />
+                  <FaPlusSquare size="28" />
                 </span>
               </button>
             </div>

@@ -39,9 +39,8 @@ class Todos extends React.Component {
             </div>
             <div className="control">
               <button className="button is-info" onClick={this.addItem}>
-                <span>Add Todo</span>
                 <span className="icon">
-                  <FaPlusSquare color="" />
+                  <FaPlusSquare size="28" />
                 </span>
               </button>
             </div>

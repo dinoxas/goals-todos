@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import LoadingBar from "react-redux-loading";
 import ConnectedTodos from "./Todos";
 import ConnectedGoals from "./Goals";
+import Header from "./Header";
 import { handleInitialData } from "../actions/shared";
 
 class App extends React.Component {
@@ -14,17 +15,8 @@ class App extends React.Component {
     return (
       <div>
         <LoadingBar />
-        <div className="hero is-dark">
-          <div className="hero-body">
-            <h1 className="title is-3 has-text-centered">
-              Goals &amp; Todos app with React &amp; Redux
-            </h1>
-            <p className="has-text-centered">
-              Open the console to see the current action and state.
-            </p>
-          </div>
-        </div>
-        <div className="hero-body">
+        <Header />
+        <div className="container" style={{ marginTop: "30px" }}>
           <ConnectedTodos />
           <ConnectedGoals />
         </div>
